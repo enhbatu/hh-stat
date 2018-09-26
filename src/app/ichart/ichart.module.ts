@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ImapComponent } from './imap/imap.component';
+import { ImapComponent } from './components/imap/imap.component';
 
 @NgModule({
   imports: [

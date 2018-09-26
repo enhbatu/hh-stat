@@ -1,1 +1,28 @@
-<app-imap></app-imap>
+<div class="header">
+    <div class="row">
+        <select [(ngModel)]="parentclass" (change)="loadMainClass()" class="col-6 form-control">
+            <option value="1">Ажлын шинэ байранд орсон иргэн</option>
+            <option value="2">Ажил хайж буй иргэд</option>
+        </select>
+        <select [(ngModel)]="mainclass" (change)="loadSubClass()" class="col-6 form-control">
+            <option *ngFor="let c of mainclasses" [value]="c.id">{{c.Name}}</option>
+        </select>
+        <select [(ngModel)]="subclass" (change)="selectData()" class="col-6 form-control">
+            <option *ngFor="let c of dataconfig" [value]="c.id">{{c.Name}}</option>
+        </select>
+    </div>
+</div>
+<div class="row">
+    <div class="container">
+        <div class="class">
+            <div class="col-6">
+                <app-imap [data]='data' [dataconfig]='dataconfig' [selectedDataConfig]='selectedDataConfig' [aimags]='aimags'
+                    (selectedAimag)='onSelectAimag($event)'></app-imap>
+            </div>
+            <div class="col-6">
+                <app-imap [data]='data' [dataconfig]='dataconfig' [selectedDataConfig]='selectedDataConfig' [aimags]='aimags'
+                    (selectedAimag)='onSelectAimag($event)'></app-imap>
+            </div>
+        </div>
+    </div>
+</div>
