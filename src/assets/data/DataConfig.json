@@ -1,0 +1,614 @@
+[{
+    "id": 0,
+    "parentclass": 1,
+    "mainclass": 0,
+    "Name": "Бүгд",
+    "dun": "dun",
+    "percent": "percent",
+    "female": "dun-female",
+    "color": "#01172F"
+  },
+  {
+    "id": 1,
+    "parentclass": 1,
+    "mainclass": 0,
+    "Name": "Менежер",
+    "dun": "dun1",
+    "percent": "percent1",
+    "female": "female1"
+  },
+  {
+    "id": 2,
+    "parentclass": 1,
+    "mainclass": 0,
+    "Name": "Мэргэжилтэн",
+    "dun": "dun2",
+    "percent": "percent2",
+    "female": "female2"
+  },
+  {
+    "id": 3,
+    "parentclass": 1,
+    "mainclass": 0,
+    "Name": "Техникч болон туслах/дэд мэргэжилтэн",
+    "dun": "dun3",
+    "percent": "percent3",
+    "female": "female3"
+  },
+  {
+    "id": 4,
+    "parentclass": 1,
+    "mainclass": 0,
+    "Name": "Контор, үйлчилгээний ажилтан",
+    "dun": "dun4",
+    "percent": "percent4",
+    "female": "female4"
+  },
+  {
+    "id": 5,
+    "parentclass": 1,
+    "mainclass": 0,
+    "Name": "Худалдаа, үйлчилгээний ажилтан",
+    "dun": "dun5",
+    "percent": "percent5",
+    "female": "female5"
+  },
+  {
+    "id": 6,
+    "parentclass": 1,
+    "mainclass": 0,
+    "Name": "Хөдөө аж ахуй, ой, загас агнуурын мэргэшсэн ажилтан",
+    "dun": "dun6",
+    "percent": "percent6",
+    "female": "female6"
+  },
+  {
+    "id": 7,
+    "parentclass": 1,
+    "mainclass": 0,
+    "Name": "Үйлдвэрлэл, барилга, гар урлал, холбогдох ажил, үйлчилгээний ажилтан",
+    "dun": "dun7",
+    "percent": "percent7",
+    "female": "female7"
+  },
+  {
+    "id": 8,
+    "parentclass": 1,
+    "mainclass": 0,
+    "Name": "Машин механизм, төхөөргийн операторч, угсрагч",
+    "dun": "dun8",
+    "percent": "percent8",
+    "female": "female8"
+  },
+  {
+    "id": 9,
+    "parentclass": 1,
+    "mainclass": 0,
+    "Name": "Энгийн ажил, мэргэжил",
+    "dun": "dun9",
+    "percent": "percent9",
+    "female": "female9"
+  },
+  {
+    "id": 10,
+    "parentclass": 1,
+    "mainclass": 0,
+    "Name": "Зэвсэгт хүчний ажил, мэргэжил",
+    "dun": "dun10",
+    "percent": "percent10",
+    "female": "female10"
+  },
+  {
+    "id": 0,
+    "parentclass": 1,
+    "mainclass": 1,
+    "Name": "Бүгд",
+    "dun": "dun",
+    "percent": "percent",
+    "female": "dun-female"
+  },
+  {
+    "id": 11,
+    "parentclass": 1,
+    "mainclass": 1,
+    "Name": "15-24",
+    "dun": "dun11",
+    "percent": "percent11",
+    "female": "female11"
+  },
+  {
+    "id": 12,
+    "parentclass": 1,
+    "mainclass": 1,
+    "Name": "25-34",
+    "dun": "dun12",
+    "percent": "percent12",
+    "female": "female12"
+  },
+  {
+    "id": 13,
+    "parentclass": 1,
+    "mainclass": 1,
+    "Name": "35-44",
+    "dun": "dun13",
+    "percent": "percent13",
+    "female": "female13"
+  },
+  {
+    "id": 14,
+    "parentclass": 1,
+    "mainclass": 1,
+    "Name": "45-54",
+    "dun": "dun14",
+    "percent": "percent14",
+    "female": "female14"
+  },
+  {
+    "id": 15,
+    "parentclass": 1,
+    "mainclass": 1,
+    "Name": "55-59",
+    "dun": "dun15",
+    "percent": "percent15",
+    "female": "female15"
+  },
+  {
+    "id": 16,
+    "parentclass": 1,
+    "mainclass": 1,
+    "Name": "60+",
+    "dun": "dun16",
+    "percent": "percent16",
+    "female": "female16"
+  },
+  {
+    "id": 0,
+    "parentclass": 1,
+    "mainclass": 1,
+    "Name": "Бүгд",
+    "dun": "dun",
+    "percent": "percent",
+    "female": "dun-female"
+  },
+  {
+    "id": 17,
+    "parentclass": 1,
+    "mainclass": 2,
+    "Name": "ХАА, ойн аж ахуй, загас барилт, ан агнуур",
+    "dun": "dun17",
+    "percent": "percent17",
+    "female": "female17"
+  },
+  {
+    "id": 18,
+    "parentclass": 1,
+    "mainclass": 2,
+    "Name": "Уул уурхай, олборлолт ",
+    "dun": "dun18",
+    "percent": "percent18",
+    "female": "female18"
+  },
+  {
+    "id": 19,
+    "parentclass": 1,
+    "mainclass": 2,
+    "Name": "Боловсруулах үйлдвэрлэл",
+    "dun": "dun19",
+    "percent": "percent19",
+    "female": "female19"
+  },
+  {
+    "id": 20,
+    "parentclass": 1,
+    "mainclass": 2,
+    "Name": "Цахилгаан, хий, уур, агааржуулалт",
+    "dun": "dun20",
+    "percent": "percent20",
+    "female": "female20"
+  },
+  {
+    "id": 21,
+    "parentclass": 1,
+    "mainclass": 2,
+    "Name": "Ус хангамж, бохир ус зайлуулах систем, хог, хаягдлын менежмент болон цэвэрлэх үйл ажиллагаа",
+    "dun": "dun21",
+    "percent": "percent21",
+    "female": "female21"
+  },
+  {
+    "id": 22,
+    "parentclass": 1,
+    "mainclass": 2,
+    "Name": "Барилга",
+    "dun": "dun22",
+    "percent": "percent22",
+    "female": "female22"
+  },
+  {
+    "id": 23,
+    "parentclass": 1,
+    "mainclass": 2,
+    "Name": "Бөөний болон жижиглэн худалдаа, машин, мотоциклийн засвар үйлчилгээ ",
+    "dun": "dun23",
+    "percent": "percent23",
+    "female": "female23"
+  },
+  {
+    "id": 24,
+    "parentclass": 1,
+    "mainclass": 2,
+    "Name": "Тээвэр ба агуулахын үйл ажиллагаа",
+    "dun": "dun24",
+    "percent": "percent24",
+    "female": "female24"
+  },
+  {
+    "id": 25,
+    "parentclass": 1,
+    "mainclass": 2,
+    "Name": "Зочид буудал, байр, сууц болон нийтийн хоолны үйлчилгээ",
+    "dun": "dun25",
+    "percent": "percent25",
+    "female": "female25"
+  },
+  {
+    "id": 26,
+    "parentclass": 1,
+    "mainclass": 2,
+    "Name": "Мэдээлэл, холбоо",
+    "dun": "dun26",
+    "percent": "percent26",
+    "female": "female26"
+  },
+  {
+    "id": 27,
+    "parentclass": 1,
+    "mainclass": 2,
+    "Name": "Санхүүгийн болон даатгалын үйл ажиллагаа",
+    "dun": "dun27",
+    "percent": "percent27",
+    "female": "female27"
+  },
+  {
+    "id": 28,
+    "parentclass": 1,
+    "mainclass": 2,
+    "Name": "Үл хөдлөх хөрөнгийн үйл ажиллагаа ",
+    "dun": "dun28",
+    "percent": "percent28",
+    "female": "female28"
+  },
+  {
+    "id": 29,
+    "parentclass": 1,
+    "mainclass": 2,
+    "Name": "Мэргэжлийн шинжлэх ухаан болон техникийн үйл ажиллагаа",
+    "dun": "dun29",
+    "percent": "percent29",
+    "female": "female29"
+  },
+  {
+    "id": 30,
+    "parentclass": 1,
+    "mainclass": 2,
+    "Name": "Удирдлагын болон дэмжлэг үзүүлэх үйл ажиллагаа",
+    "dun": "dun30",
+    "percent": "percent30",
+    "female": "female30"
+  },
+  {
+    "id": 31,
+    "parentclass": 1,
+    "mainclass": 2,
+    "Name": "Төрийн удирдлага ба батлан хамгаалах үйл ажиллагаа, албан журмын нийгмийн хамгаалал",
+    "dun": "dun31",
+    "percent": "percent31",
+    "female": "female31"
+  },
+  {
+    "id": 32,
+    "parentclass": 1,
+    "mainclass": 2,
+    "Name": "Боловсрол",
+    "dun": "dun32",
+    "percent": "percent32",
+    "female": "female32"
+  },
+  {
+    "id": 33,
+    "parentclass": 1,
+    "mainclass": 2,
+    "Name": "Хүний эрүүл мэнд ба нийгмийн халамжийн үйл ажиллагаа ",
+    "dun": "dun33",
+    "percent": "percent33",
+    "female": "female33"
+  },
+  {
+    "id": 34,
+    "parentclass": 1,
+    "mainclass": 2,
+    "Name": "Урлаг, үзвэр, тоглоом наадам",
+    "dun": "dun34",
+    "percent": "percent34",
+    "female": "female34"
+  },
+  {
+    "id": 35,
+    "parentclass": 1,
+    "mainclass": 2,
+    "Name": "Үйлчилгээний бусад үйл ажиллагаа",
+    "dun": "dun35",
+    "percent": "percent35",
+    "female": "female35"
+  },
+  {
+    "id": 36,
+    "parentclass": 1,
+    "mainclass": 2,
+    "Name": "Хүн хөлсөн ажиллуулдаг өрхийн үйл ажиллагаа",
+    "dun": "dun36",
+    "percent": "percent36",
+    "female": "female36"
+  },
+  {
+    "id": 37,
+    "parentclass": 1,
+    "mainclass": 2,
+    "Name": "Олон улсын байгууллага, суурин төлөөлөгчийн үйл ажиллагаа",
+    "dun": "dun37",
+    "percent": "percent37",
+    "female": "female37"
+  },
+  {
+    "id": 38,
+    "parentclass": 2,
+    "mainclass": 0,
+    "Name": "Тайлант хугацаанд нэмэгдсэн иргэн",
+    "dun": "dun",
+    "percent": "percent",
+    "female": "female"
+  },
+  {
+    "id": 39,
+    "parentclass": 2,
+    "mainclass": 0,
+    "Name": "  Шилжин суурьшсан",
+    "dun": "dun1",
+    "percent": "percent1",
+    "female": "female1"
+  },
+  {
+    "id": 40,
+    "parentclass": 2,
+    "mainclass": 0,
+    "Name": "Сургууль төгсөөд ажилгүй байгаа",
+    "dun": "dun2",
+    "percent": "percent2",
+    "female": "female2"
+  },
+  {
+    "id": 41,
+    "parentclass": 2,
+    "mainclass": 0,
+    "Name": "Сургуулиа орхисон /гарсан, чөлөө авсан/",
+    "dun": "dun3",
+    "percent": "percent3",
+    "female": "female3"
+  },
+  {
+    "id": 42,
+    "parentclass": 2,
+    "mainclass": 0,
+    "Name": " Цэргээс халагдаад ажилгүй байгаа",
+    "dun": "dun4",
+    "percent": "percent4",
+    "female": "female4"
+  },
+  {
+    "id": 43,
+    "parentclass": 2,
+    "mainclass": 0,
+    "Name": "Гадаадаас эргэж ирсэн",
+    "dun": "dun5",
+    "percent": "percent5",
+    "female": "female5"
+  },
+  {
+    "id": 44,
+    "parentclass": 2,
+    "mainclass": 0,
+    "Name": "Хорих газраас суллагдсан",
+    "dun": "dun6",
+    "percent": "percent6",
+    "female": "female6"
+  },
+  {
+    "id": 45,
+    "parentclass": 2,
+    "mainclass": 0,
+    "Name": "Хөдөлмөрийн насанд хүрч асрамжийн газраас гарсан",
+    "dun": "dun7",
+    "percent": "percent7",
+    "female": "female7"
+  },
+  {
+    "id": 46,
+    "parentclass": 2,
+    "mainclass": 0,
+    "Name": "Одоо эрхэлж байгаа ажлаа солих хүсэлтэй",
+    "dun": "dun8",
+    "percent": "percent8",
+    "female": "female8"
+  },
+  {
+    "id": 47,
+    "parentclass": 2,
+    "mainclass": 0,
+    "Name": "Ажлаас халагдах мэдэгдэл авсан",
+    "dun": "dun9",
+    "percent": "percent9",
+    "female": "female9"
+  },
+  {
+    "id": 48,
+    "parentclass": 2,
+    "mainclass": 0,
+    "Name": "Өрхийн болон хувийн аж ахуй нь эрсдэлд орж орлогогүй болсон",
+    "dun": "dun10",
+    "percent": "percent10",
+    "female": "female10"
+  },
+  {
+    "id": 49,
+    "parentclass": 2,
+    "mainclass": 0,
+    "Name": "Цалин, орлого хүрэлцэхгүй байгаа ",
+    "dun": "dun11",
+    "percent": "percent11",
+    "female": "female11"
+  },
+  {
+    "id": 50,
+    "parentclass": 2,
+    "mainclass": 0,
+    "Name": "Нэмэлт цагаар ажиллах",
+    "dun": "dun12",
+    "percent": "percent12",
+    "female": "female12"
+  },
+  {
+    "id": 51,
+    "parentclass": 2,
+    "mainclass": 0,
+    "Name": "Мэргэжил, ур чадвараа ашиглан орлогоо нэмэгдүүлэх",
+    "dun": "dun13",
+    "percent": "percent13",
+    "female": "female13"
+  },
+  {
+    "id": 52,
+    "parentclass": 2,
+    "mainclass": 0,
+    "Name": "Мэргэжлийн ур чадварын хувьд тэнцэхгүй болсон",
+    "dun": "dun14",
+    "percent": "percent14",
+    "female": "female14"
+  },
+  {
+    "id": 53,
+    "parentclass": 2,
+    "mainclass": 0,
+    "Name": "Эрүүл мэндийн хувьд тэнцэхгүй болсон",
+    "dun": "dun15",
+    "percent": "percent15",
+    "female": "female15"
+  },
+  {
+    "id": 54,
+    "parentclass": 2,
+    "mainclass": 0,
+    "Name": "Тэтгэвэрт гарсан ",
+    "dun": "dun16",
+    "percent": "percent16",
+    "female": "female16"
+  },
+  {
+    "id": 55,
+    "parentclass": 2,
+    "mainclass": 0,
+    "Name": "Хөдөлмөрийн сахилгын зөрчил гаргасан",
+    "dun": "dun17",
+    "percent": "percent17",
+    "female": "female17"
+  },
+  {
+    "id": 56,
+    "parentclass": 2,
+    "mainclass": 0,
+    "Name": "Орон тооны цомхотголд орсон",
+    "dun": "dun18",
+    "percent": "percent18",
+    "female": "female18"
+  },
+  {
+    "id": 57,
+    "parentclass": 2,
+    "mainclass": 0,
+    "Name": "Байгууллага татан буугдсан",
+    "dun": "dun19",
+    "percent": "percent19",
+    "female": "female19"
+  },
+  {
+    "id": 58,
+    "parentclass": 2,
+    "mainclass": 0,
+    "Name": "Бусад",
+    "dun": "dun20",
+    "percent": "percent20",
+    "female": "female20"
+  },
+  {
+    "id": 59,
+    "parentclass": 2,
+    "mainclass": 1,
+    "Name": "Бүгд",
+    "dun": "dun21",
+    "percent": "percent21",
+    "female": "female21"
+  },
+  {
+    "id": 60,
+    "parentclass": 2,
+    "mainclass": 1,
+    "Name": "15-24",
+    "dun": "dun22",
+    "percent": "percent22",
+    "female": "female22"
+  },
+  {
+    "id": 61,
+    "parentclass": 2,
+    "mainclass": 1,
+    "Name": "25-34",
+    "dun": "dun23",
+    "percent": "percent23",
+    "female": "female23"
+  },
+  {
+    "id": 62,
+    "parentclass": 2,
+    "mainclass": 1,
+    "Name": "35-44",
+    "dun": "dun24",
+    "percent": "percent24",
+    "female": "female24"
+  },
+  {
+    "id": 63,
+    "parentclass": 2,
+    "mainclass": 1,
+    "Name": "45-54",
+    "dun": "dun25",
+    "percent": "percent25",
+    "female": "female25"
+  },
+  {
+    "id": 64,
+    "parentclass": 2,
+    "mainclass": 1,
+    "Name": "55-59",
+    "dun": "dun26",
+    "percent": "percent26",
+    "female": "female26"
+  },
+  {
+    "id": 65,
+    "parentclass": 2,
+    "mainclass": 1,
+    "Name": "60+",
+    "dun": "dun27",
+    "percent": "percent27",
+    "female": "female27"
+  }
+]
