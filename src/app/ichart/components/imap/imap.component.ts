@@ -112,7 +112,7 @@ export class ImapComponent implements OnInit {
   getAimagValue(aid: number, datakey: any): any {
     return this.data.find(x => x.id == aid)[datakey];
   }
-  
+
   momap(aid: number, $event) {
     // let ap = this.getAimagMap(aid).nativeElement;
     // ap.setAttribute("opacity", "0.7");
@@ -127,5 +127,22 @@ export class ImapComponent implements OnInit {
   }
   selectAimag(aid: number) {
     this.selectedAimag.emit(this.getAimag(aid));
+  }
+  calcColor(percent: number): string {
+    console.log(percent);
+    if (percent >= 0.5) {
+      return '#F25F5C';
+    }
+    else {
+      return '#247BA0';
+    }
+  }
+  calcOpacity(percent: number): number {
+    if (percent >= 0.5) {
+      return percent;
+    }
+    else {
+      return 1 - percent;
+    }
   }
 }

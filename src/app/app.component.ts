@@ -76,6 +76,7 @@ export class AppComponent {
   getdata(parentclass: number, datakey: any) {
     this.service.getdata(parentclass).subscribe((result) => {
       this.data = result;
+      console.log(this.data);
       this.loadDataForMap(this.selectedDataConfig.percent);
     });
   }
@@ -99,6 +100,6 @@ export class AppComponent {
   }
   onSelectAimag(aimag: Aimags) {
     this.selectedAimag = aimag;
-    console.log(this.selectedAimag);
+    // console.log(this.selectedAimag);
   }
 }
