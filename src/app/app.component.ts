@@ -13,14 +13,15 @@ export class AppComponent {
   subtitle: string;
   datatitle: string;
   mainclasses: any[] = [];
-  mainclass: any;
+  mainclass: any[];
   parentclass: any;
   AimagValue: any;
   dataconfig: any;
   subclass: string;
   selectedDataConfig: any;
   subclassName: any;
-  data: StatData[];
+  data_map1: StatData[];
+  data_map2: StatData[];
   aimags: Aimags[];
   selectedAimag: Aimags;
 
@@ -29,61 +30,69 @@ export class AppComponent {
   }
 
   ngOnInit() {
+    this.mainclass = [];
     // Load config
     this.service.getconfig().subscribe((result) => {
       this.dataconfig = result;
       this.selectedDataConfig = this.dataconfig[0];
+      this.getdata_map1(this.selectedDataConfig.percent);
+      this.getdata_map2(this.selectedDataConfig.percent);
     });
     this.aimagService.getdata().subscribe((result) => {
       this.aimags = result;
     })
   }
 
-  loadMainClass(): void {
-    this.mainclasses = [];
-    if (this.parentclass == 1) {
-      this.mainclasses.push({ id: 0, Name: "Ажил мэргэжлийн ангиллаар" });
-      this.mainclasses.push({ id: 1, Name: "Насны бүлгээр" });
-      this.mainclasses.push({ id: 2, Name: "Эдийн засгийн үйл ажиллагааны салбарын ангиллаар " });
+  loadMainClass(parentclass: number): any[] {
+    let mainclasses = [];
+    if (parentclass == 1) {
+      mainclasses.push({ id: 0, Name: "Ажил мэргэжлийн ангиллаар" });
+      mainclasses.push({ id: 1, Name: "Насны бүлгээр" });
+      mainclasses.push({ id: 2, Name: "Эдийн засгийн үйл ажиллагааны салбарын ангиллаар " });
     }
-    if (this.parentclass == 2) {
-      this.mainclasses.push({ id: 0, Name: "Ажил хайж байгаа шалтгаанаар" });
-      this.mainclasses.push({ id: 1, Name: "Насны бүлгээр" });
+    if (parentclass == 2) {
+      mainclasses.push({ id: 0, Name: "Ажил хайж байгаа шалтгаанаар" });
+      mainclasses.push({ id: 1, Name: "Насны бүлгээр" });
       // this.mainclasses.push({ id: 2, Name: "Боловсролын түвшнээр" });
     }
-    if (this.mainclass == undefined)
-      this.mainclass = 0;
-    this.loadSubClass();
+    this.mainclass[parentclass - 1] = 0;
+    return mainclasses;
   }
 
-  loadSubClass(): void {
+  loadSubClass(parentclass: number, mainclass: number): void {
     this.service.getconfig().subscribe((result) => {
       if (this.dataconfig != undefined) {
-        this.dataconfig = result.filter(x => x.parentclass == this.parentclass && x.mainclass == this.mainclass);
+        this.dataconfig = result.filter(x => x.parentclass == parentclass && x.mainclass == mainclass);
         this.subclass = "0";
-        this.selectData();
+        this.selectData(parentclass, this.subclass);
       }
     });
   }
 
-  selectData(): void {
+  selectData(parentclass: number, subclass: string): void {
     if (this.dataconfig != undefined) {
       this.getDataName(this.subclass);
-      this.getdata(this.parentclass, this.selectedDataConfig.percent);
+      this.getdata_map1(this.selectedDataConfig.percent);
     }
   }
 
-  getdata(parentclass: number, datakey: any) {
-    this.service.getdata(parentclass).subscribe((result) => {
-      this.data = result;
-      console.log(this.data);
-      this.loadDataForMap(this.selectedDataConfig.percent);
+  getdata_map1(datakey: any) {
+    this.service.getdata(1).subscribe((result) => {
+      this.data_map1 = result;
+      this.loadDataForMap(this.data_map1, this.selectedDataConfig.percent);
     });
   }
 
-  loadDataForMap(datakey: any) {
+  getdata_map2(datakey: any) {
+    this.service.getdata(2).subscribe((result) => {
+      this.data_map2 = result;
+      this.loadDataForMap(this.data_map2, this.selectedDataConfig.percent);
+    });
+  }
+
+  loadDataForMap(data: any[], datakey: any) {
     this.service.sortDataById(
-      this.service.calcCPercentData(this.data, datakey),
+      this.service.calcCPercentData(data, datakey),
       datakey
     );
   }

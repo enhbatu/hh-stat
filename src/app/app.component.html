@@ -1,28 +1,23 @@
-<div class="header">
-    <div class="row">
-        <select [(ngModel)]="parentclass" (change)="loadMainClass()" class="col-6 form-control">
-            <option value="1">Ажлын шинэ байранд орсон иргэн</option>
-            <option value="2">Ажил хайж буй иргэд</option>
-        </select>
-        <select [(ngModel)]="mainclass" (change)="loadSubClass()" class="col-6 form-control">
-            <option *ngFor="let c of mainclasses" [value]="c.id">{{c.Name}}</option>
-        </select>
-        <select [(ngModel)]="subclass" (change)="selectData()" class="col-6 form-control">
-            <option *ngFor="let c of dataconfig" [value]="c.id">{{c.Name}}</option>
-        </select>
-    </div>
-</div>
 <div class="row">
     <div class="container">
+        <div class="row" *ngIf='mainclass!=undefined'>
+            <div class="col-6">
+                <app-imap [data]='data_map1' [dataconfig]='dataconfig' [selectedDataConfig]='selectedDataConfig'
+                    [aimags]='aimags' (selectedAimag)='onSelectAimag($event)'></app-imap>
+                <select [(ngModel)]="mainclass[0]" class="col-6 form-control">
+                    <option *ngFor="let c of loadMainClass(1)" [value]="c.id">{{c.Name}}</option>
+                </select>
+            </div>
+            <div class="col-6">
+                <app-imap [data]='data_map2' [dataconfig]='dataconfig' [selectedDataConfig]='selectedDataConfig'
+                    [aimags]='aimags' (selectedAimag)='onSelectAimag($event)'></app-imap>
+                <select [(ngModel)]="mainclass[1]" class="col-6 form-control">
+                    <option *ngFor="let c of loadMainClass(2)" [value]="c.id">{{c.Name}}</option>
+                </select>
+            </div>
+        </div>
         <div class="row">
-            <div class="col-6">
-                <app-imap [data]='data' [dataconfig]='dataconfig' [selectedDataConfig]='selectedDataConfig' [aimags]='aimags'
-                    (selectedAimag)='onSelectAimag($event)'></app-imap>
-            </div>
-            <div class="col-6">
-                <app-imap [data]='data' [dataconfig]='dataconfig' [selectedDataConfig]='selectedDataConfig' [aimags]='aimags'
-                    (selectedAimag)='onSelectAimag($event)'></app-imap>
-            </div>
+            <app-ibar></app-ibar>
         </div>
     </div>
 </div>

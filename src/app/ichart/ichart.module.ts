@@ -2,15 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ImapComponent } from './components/imap/imap.component';
 import { IbarComponent } from './components/ibar/ibar.component';
+import { ChartModule } from 'angular-highcharts';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    ChartModule 
   ],
   declarations: [
     ImapComponent,
-    IbarComponent,
+    IbarComponent
   ],
-  exports: [ImapComponent]
+  exports: [ImapComponent, IbarComponent]
 })
 export class IchartModule { }
