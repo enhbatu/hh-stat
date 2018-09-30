@@ -129,19 +129,19 @@ export class ImapComponent implements OnInit {
     this.selectedAimag.emit(this.getAimag(aid));
   }
   calcColor(percent: number): string {
-    if (percent >= 0.5) {
+    // if (percent >= 0.5) {
       return '#F25F5C';
-    }
-    else {
-      return '#FF9F1C';
-    }
+    // }
+    // else {
+    //   return '#FF9F1C';
+    // }
   }
   calcOpacity(percent: number): number {
-    if (percent >= 0.5) {
+    // if (percent >= 0.5) {
       return percent;
-    }
-    else {
-      return 1 - percent;
-    }
+    // }
+    // else {
+    //   return 1 - percent;
+    // }
   }
 }
