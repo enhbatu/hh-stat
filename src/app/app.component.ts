@@ -3,6 +3,7 @@ import { DataService } from './core/data.service';
 import { AimagService } from './core/aimag.service';
 import { StatData } from './core/stat-data';
 import { Aimags } from './core/aimags';
+import { Chart } from 'angular-highcharts';
 
 @Component({
   selector: 'app-root',
@@ -24,13 +25,12 @@ export class AppComponent {
   subclassName: any;
   data_map1: StatData[];
   data_map2: StatData[];
-  data_bar1: StatData[][] = [];
+  data_bar1: any[][] = [];
   aimags: Aimags[];
   selectedAimag: Aimags;
+  BarChart: Chart;
 
-  constructor(private service: DataService, private aimagService: AimagService) {
-
-  }
+  constructor(private service: DataService, private aimagService: AimagService) { }
 
   ngOnInit() {
     this.mainclasses1 = this.loadMainClass(1);
@@ -43,13 +43,59 @@ export class AppComponent {
       this.selectedDataConfig = this.dataconfig[0];
       this.getdata_map1(this.selectedDataConfig.percent);
       this.getdata_map2(this.selectedDataConfig.percent);
-      this.getdata_bar1();
+      this.getdata_bar1(0, this.mainclass1, this.dataconfig);
     });
     this.aimagService.getdata().subscribe((result) => {
       this.aimags = result;
     })
   }
 
+  InitBarChart(title: string, subtitle: string, categories: string[], xtitle: string, ytitle: string, series_name: string, data: any[]) {
+    this.BarChart = new Chart({
+      chart: {
+        type: 'bar'
+      },
+      title: {
+        text: title
+      },
+      subtitle: {
+        text: subtitle
+      },
+      xAxis: {
+        categories: categories,
+        title: {
+          text: xtitle
+        }
+      },
+      yAxis: {
+        min: 0,
+        title: {
+          text: ytitle,
+          align: 'high'
+        },
+        labels: {
+          overflow: 'justify'
+        }
+      },
+      credits: {
+        enabled: false
+      },
+      plotOptions: {
+        series: {
+          cursor: 'pointer',
+          events: {
+            click: function (event) {
+              console.log(event.point.id);
+            }
+          }
+        }
+      }
+      series: [{
+        name: series_name,
+        data: data,
+      }]
+    });
+  }
   loadMainClass(parentclass: number): any[] {
     let mainclasses = [];
     if (parentclass == 1) {
@@ -63,7 +109,7 @@ export class AppComponent {
       mainclasses.push({ id: 1, Name: "Насны бүлгээр" });
       // this.mainclasses.push({ id: 2, Name: "Боловсролын түвшнээр" });
       this.mainclass2 = 0;
-    }        
+    }
     return mainclasses;
   }
 
@@ -115,10 +161,20 @@ export class AppComponent {
       }
     }
   }
-  getdata_bar1() {
-    this.service.getdata(1).subscribe((result) => {            
-      this.data_bar1 = this.service.groupBy(this.dataconfig, result, this.mainclass1, 0);
+  getdata_bar1(aimagid: number, mainclass: number, dataconfig: any[]) {
+    this.service.getdata(1).subscribe((result) => {
+      this.data_bar1 = this.service.groupBy(dataconfig, result, 1, mainclass, aimagid);
+      this.InitBarChart("", "", this.data_bar1[0], "", "", "", this.data_bar1[1])
     });
+  }
+  OnChangeMainClass(mainclass: number) {
+    console.log(this.mainclass1);
+    if (this.selectedAimag != undefined) {
+      this.getdata_bar1(this.selectedAimag.AimagID, mainclass, this.dataconfig);
+    }
+    else {
+      this.getdata_bar1(0, mainclass, this.dataconfig);
+    }
   }
   onSelectAimag(aimag: Aimags) {
     this.selectedAimag = aimag;
