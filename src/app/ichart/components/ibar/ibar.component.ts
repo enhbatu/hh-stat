@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Chart } from 'angular-highcharts';
 
 @Component({
@@ -8,26 +8,53 @@ import { Chart } from 'angular-highcharts';
 })
 export class IbarComponent implements OnInit {
   chart: Chart;
+  @Input() title: string;
+  @Input() subtitle: string;
+  @Input() categories: any[];
+  @Input() xtitle: string;
+  @Input() ytitle: string;
+  @Input() series_name: string;
+  @Input() data: any[];
+
 
   constructor() { }
 
   ngOnInit() {
+    console.log(this.series_name);
+    console.log(this.data);
     this.chart = new Chart({
       chart: {
-        type: 'line'
+        type: 'bar'
       },
       title: {
-        text: 'Linechart'
+        text: this.title
+      },
+      subtitle: {
+        text: this.subtitle
+      },
+      xAxis: {
+        categories: this.categories,
+        title: {
+          text: this.xtitle
+        }
+      },
+      yAxis: {
+        min: 0,
+        title: {
+          text: this.ytitle,
+          align: 'high'
+        },
+        labels: {
+          overflow: 'justify'
+        }
       },
       credits: {
         enabled: false
       },
-      series: [
-        {
-          name: 'Line 1',
-          data: [1, 2, 3]
-        }
-      ]
+      series: [{
+        name: this.series_name,
+        data: this.data
+      }]
     });
   }
 

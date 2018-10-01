@@ -41,4 +41,24 @@ export class DataService {
     });
     return data;
   }
+  groupBy(dataconfig: any[], data: any[], mainclass: number, aimagid: number): any[][] {
+    let groupByData: any[][] = [];
+    groupByData[0] = [];
+    groupByData[1] = [];
+    for (var i = 1; i < dataconfig.length; i++) {
+      if (dataconfig[i].mainclass == mainclass) {
+        groupByData[0].push(dataconfig[i].Name);
+        let total: number = 0;
+        if (aimagid == 0) {
+          for (var j = 0; j < data.length; j++) {
+            total = total + data[j][dataconfig[i].dun];
+          }
+          groupByData[1].push(total);
+        }
+      }
+    }
+    // console.log(groupByData[0]);
+    // console.log(groupByData[1]);
+    return groupByData;
+  }
 }

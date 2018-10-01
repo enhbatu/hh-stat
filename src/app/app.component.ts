@@ -12,8 +12,10 @@ import { Aimags } from './core/aimags';
 export class AppComponent {
   subtitle: string;
   datatitle: string;
-  mainclasses: any[] = [];
-  mainclass: any[];
+  mainclasses1: any[] = [];
+  mainclasses2: any[] = [];
+  mainclass1: any = '';
+  mainclass2: any = '';
   parentclass: any;
   AimagValue: any;
   dataconfig: any;
@@ -22,6 +24,7 @@ export class AppComponent {
   subclassName: any;
   data_map1: StatData[];
   data_map2: StatData[];
+  data_bar1: StatData[][] = [];
   aimags: Aimags[];
   selectedAimag: Aimags;
 
@@ -30,13 +33,17 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.mainclass = [];
+    this.mainclasses1 = this.loadMainClass(1);
+    this.mainclasses2 = this.loadMainClass(2);
+    this.data_bar1[0] = [];
+    this.data_bar1[1] = [];
     // Load config
     this.service.getconfig().subscribe((result) => {
       this.dataconfig = result;
       this.selectedDataConfig = this.dataconfig[0];
       this.getdata_map1(this.selectedDataConfig.percent);
       this.getdata_map2(this.selectedDataConfig.percent);
+      this.getdata_bar1();
     });
     this.aimagService.getdata().subscribe((result) => {
       this.aimags = result;
@@ -49,13 +56,14 @@ export class AppComponent {
       mainclasses.push({ id: 0, Name: "Ажил мэргэжлийн ангиллаар" });
       mainclasses.push({ id: 1, Name: "Насны бүлгээр" });
       mainclasses.push({ id: 2, Name: "Эдийн засгийн үйл ажиллагааны салбарын ангиллаар " });
+      this.mainclass1 = 0;
     }
     if (parentclass == 2) {
       mainclasses.push({ id: 0, Name: "Ажил хайж байгаа шалтгаанаар" });
       mainclasses.push({ id: 1, Name: "Насны бүлгээр" });
       // this.mainclasses.push({ id: 2, Name: "Боловсролын түвшнээр" });
-    }
-    this.mainclass[parentclass - 1] = 0;
+      this.mainclass2 = 0;
+    }        
     return mainclasses;
   }
 
@@ -106,6 +114,11 @@ export class AppComponent {
         }
       }
     }
+  }
+  getdata_bar1() {
+    this.service.getdata(1).subscribe((result) => {            
+      this.data_bar1 = this.service.groupBy(this.dataconfig, result, this.mainclass1, 0);
+    });
   }
   onSelectAimag(aimag: Aimags) {
     this.selectedAimag = aimag;
