@@ -21,6 +21,11 @@
             <div class="col-md-6">
               <app-imap [data]='data_map' [dataconfig]='dataconfig' [selectedDataConfig]='selectedDataConfig' [aimags]='aimags'
                 (selectedAimag)='onSelectAimag($event)'></app-imap>
+              <div *ngIf='data_barBySex!=undefined'>
+                <i class="icon ion-man" style="color: blue;font-size: 30pt;">{{data_barBySex[0].dun}}</i>
+                <br>
+                <i class="icon ion-woman" style="color: blueviolet;font-size: 30pt;">{{data_barBySex[1].dun}}</i>
+              </div>
             </div>
             <div class="col-md-6">
               <div [chart]="BarChart"></div>

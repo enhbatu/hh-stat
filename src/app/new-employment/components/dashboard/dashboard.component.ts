@@ -26,6 +26,8 @@ export class DashboardComponent implements OnInit {
   aimags: Aimags[];
   selectedAimag: Aimags;
   BarChart: Chart;
+  BarChartBySex: Chart;
+  data_barBySex: any[];
 
   constructor(private service: DataService, private aimagService: AimagService) { }
 
@@ -38,6 +40,7 @@ export class DashboardComponent implements OnInit {
       this.selectedDataConfig = this.dataconfig[0];
       this.getdata_map(this.selectedDataConfig.percent);
       this.getdata_bar(0, this.mainclass, this.dataconfig);
+      this.getdata_barBySex(0, this.mainclass, this.dataconfig);
     });
     this.aimagService.getdata().subscribe((result) => {
       this.aimags = result;
@@ -154,8 +157,15 @@ export class DashboardComponent implements OnInit {
       this.InitBarChart("", "", this.data_bar[0], "", "", "", this.data_bar[1])
     });
   }
+  getdata_barBySex(aimagid: number, mainclass: number, dataconfig: any[]) {
+    this.service.getdata(1).subscribe((result) => {
+      this.data_barBySex = this.service.groupBySex(dataconfig, result, 1, mainclass, aimagid);
+      console.log(this.data_barBySex);
+      // this.InitBarChartBySex("", "", data[0], "", "", "", data[1]);
+    });
+  }
   OnChangeMainClass(mainclass: number) {
-    this.mainclass=mainclass
+    this.mainclass = mainclass
     if (this.selectedAimag != undefined) {
       this.getdata_bar(this.selectedAimag.AimagID, mainclass, this.dataconfig);
     }

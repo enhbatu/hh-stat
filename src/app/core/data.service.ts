@@ -62,4 +62,28 @@ export class DataService {
     }
     return groupByData;
   }
+  groupBySex(dataconfig: any[], data: any[], parentclass: number, mainclass: number, aimagid: number): any[] {
+    let groupByData: any[] = [];
+    let total: number = 0;
+    let female: number = 0;
+    for (var i = 0; i < dataconfig.length; i++) {
+      if (dataconfig[i].parentclass == parentclass && dataconfig[i].mainclass == mainclass) {
+        if (aimagid == 0) {
+          for (var j = 0; j < data.length; j++) {
+            total = total + data[j][dataconfig[i].dun];
+            female = female + data[j][dataconfig[i].dun + "_female"];
+          }
+        }
+      }
+    }
+    groupByData.push({
+      id: 'male',
+      dun: total - female
+    });
+    groupByData.push({
+      id: 'female',
+      dun: female
+    });
+    return groupByData;
+  }
 }
