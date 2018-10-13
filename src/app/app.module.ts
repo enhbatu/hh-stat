@@ -3,9 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { IchartModule } from './ichart/ichart.module';
 import { HttpClientModule } from '@angular/common/http';
-import { ChartModule } from 'angular-highcharts';
+import { SidebarModule } from './shared/ui/sidebar/sidebar.module';
+import { RouterModule } from '@angular/router';
+import { routes } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -13,10 +14,10 @@ import { ChartModule } from 'angular-highcharts';
   ],
   imports: [
     BrowserModule,
-    IchartModule,
     HttpClientModule,
     FormsModule,
-    ChartModule
+    SidebarModule,
+    RouterModule.forRoot(routes), 
   ],
   providers: [],
   bootstrap: [AppComponent]

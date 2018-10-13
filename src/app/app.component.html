@@ -1,30 +1,30 @@
-<div class="row">
-    <div class="container">
-        <div class="row">
-            <div class="col-6">
-                <h5>Ажлын шинэ байранд орсон иргэн</h5>
-                <select [(ngModel)]="mainclass1" class="col-6 form-control" (change)='OnChangeMainClass(mainclass1)'>
-                    <option *ngFor="let c of mainclasses1" [value]="c.id">{{c.Name}}</option>
-                </select>
-                <app-imap [data]='data_map1' [dataconfig]='dataconfig' [selectedDataConfig]='selectedDataConfig'
-                    [aimags]='aimags' (selectedAimag)='onSelectAimag($event)'></app-imap>
-            </div>
-            <div class="col-6">
-                <h5>Ажил хайж буй иргэд</h5>
-                <select [(ngModel)]="mainclass2" class="col-6 form-control" (change)='OnChangeMainClass(mainclass2)'>
-                    <option *ngFor="let c of mainclasses2" [value]="c.id">{{c.Name}}</option>
-                </select>
-                <app-imap [data]='data_map2' [dataconfig]='dataconfig' [selectedDataConfig]='selectedDataConfig'
-                    [aimags]='aimags' (selectedAimag)='onSelectAimag($event)'></app-imap>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-6">
-                <div [chart]="BarChart"></div>
-            </div>
-            <div class="col-6">
-                <!-- <div [chart]="BarChart"></div> -->
-            </div>
-        </div>
+<div class="wrapper">
+  <sidebar></sidebar>
+  <!-- <div class="topbar">
+    <div class="topbar-left">
+      <ul class="navbar">
+          <li>
+              <a routerLink="/messages">Мэссэж</a>
+          </li>
+        </ul>
     </div>
+    <span class="topbar-right">
+      <a href="" class="btn-circle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="btn-circle-label">
+          <i class="icon ion-ios-gear-outline"></i>
+        </div>
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">
+          <i class="icon ion-ios-locked"></i>Нууц үг солих</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#" (click)='Logout()'>
+          <i class="icon ion-android-exit"></i>Програмаас гарах</a>
+      </div>
+    </span>
+  </div>-->
+  <div class="topbar1"></div> 
+  <div class="content-container">
+    <router-outlet></router-outlet>
+  </div>
 </div>
